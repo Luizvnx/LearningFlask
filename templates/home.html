@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação da API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .api-description {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .endpoint {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .endpoint h2 {
+            margin-top: 0;
+        }
+
+        .endpoint p {
+            margin: 5px 0;
+        }
+
+        .endpoint a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .endpoint a:hover {
+            background-color: #005f99;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Documentação da API</h1>
+    </header>
+
+    <div class="container">
+        <div class="api-description">
+            <p>Bem-vindo à documentação da nossa API. Aqui você encontrará uma lista de todos os endpoints disponíveis para interagir com o nosso webservice. Clique em qualquer link para testar os métodos.</p>
+        </div>
+
+        <div class="endpoint">
+            <h2>Obter Todos os Usuários</h2>
+            <p>Método: <strong>GET</strong></p>
+            <p>Descrição: Retorna uma lista de todos os usuários cadastrados.</p>
+            <a href="/users">Testar Endpoint</a>
+        </div>
+
+        <div class="endpoint">
+            <h2>Adicionar Novo Usuário</h2>
+            <p>Método: <strong>POST</strong></p>
+            <p>Descrição: Adiciona um novo usuário ao sistema.</p>
+            <a href="/add_user">Testar Endpoint</a>
+        </div>
+
+        <div class="endpoint">
+            <h2>Atualizar Usuário</h2>
+            <p>Método: <strong>PUT</strong></p>
+            <p>Descrição: Atualiza as informações de um usuário existente.</p>
+            <a href="/update_user">Testar Endpoint</a>
+        </div>
+
+        <div class="endpoint">
+            <h2>Deletar Usuário</h2>
+            <p>Método: <strong>DELETE</strong></p>
+            <p>Descrição: Remove um usuário do sistema.</p>
+            <a href="/delete_user">Testar Endpoint</a>
+        </div>
+
+        <!-- Mais endpoints podem ser adicionados aqui -->
+
+        <footer>
+            <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
