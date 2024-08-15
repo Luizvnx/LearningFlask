@@ -1,1 +1,3 @@
-web: gunicorn home:app
+# usar localmente web: gunicorn home:app
+
+web: xvfb-run -a python home.py
