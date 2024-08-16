@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 from flask import request
 from config import DevelopmentConfig
-import pywhatkit
-import pywhatkit.whats
+import usecases.enviar_mensagem
 import logging
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
+uc = usecases
 
 @app.get("/")
 def home():
@@ -18,19 +18,13 @@ def enviar_mensagem():
         if request.method == "GET":
             return render_template("enviar_mensagem.html")
         elif request.method == "POST":
-            phone = request.form.get("phone", default=None)
-            msg = request.form.get("message", default=None)
-            hour = int(request.form.get("hour", default=None))
-            minute = int(request.form.get("minute", default=None))
-
-            if not all([phone, msg, hour, minute]):
-                return "Invalid input", 400
-
-            pywhatkit.whats.sendwhatmsg(phone, msg, hour, minute)
+            uc.enviar_mensagem.enviar_mensagem_impl()
             return "Mensagem enviada"
+
     except Exception as e:
+
         logging.error(e)
-        return "Error sending message", 500
+        return "Error", 400
 
 if __name__ == "__main__":
     app.run()
