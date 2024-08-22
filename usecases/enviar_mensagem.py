@@ -1,5 +1,5 @@
-from flask import request
-from flask import render_template
+from flask import Flask, request, render_template
+from config import DevelopmentConfig
 import pywhatkit
 import pywhatkit.whats
 import logging
@@ -16,8 +16,9 @@ def enviar_mensagem_impl():
             return "Invalid input", 400
 
         pywhatkit.whats.sendwhatmsg(phone, msg, hour, minute)
-        #return "Mensagem enviada"
+
     
     except Exception as e:
         logging.error(e)
         return "Error sending message", 500
+    

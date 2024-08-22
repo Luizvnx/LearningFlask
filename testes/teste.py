@@ -1,5 +1,10 @@
-import pywhatkit
-pywhatkit.start_server()
+from flask import Flask
 
+app = Flask(__name__)
 
-pywhatkit.sendwhatmsg("+5579988562587", "Hi", 13, 30)
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
+if __name__ == "__main__":
+    app.run()
